@@ -275,6 +275,20 @@
 </div><!--page wrapper -->
 <div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
 <div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
-
+<script>
+	// Don't register the service worker
+	// until the page has fully loaded
+	window.addEventListener('load', () => {
+	  // Is service worker available?
+	  if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js').then(() => {
+		  console.log('Service worker registered!');
+		}).catch((error) => {
+		  console.warn('Error registering service worker:');
+		  console.warn(error);
+		});
+	  }
+	});
+  </script>
 </body>
 </html>
