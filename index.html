@@ -9,136 +9,12 @@
 	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
 	<meta name="robots" content="all">
 	<link rel="manifest" href="manifest.json">
-	<style>
-		* {
-			margin:0px;
-			padding:0px;
-		}
-
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-		}
-
-		.container {
-            display:grid;
-            margin: 1rem auto;
-            width: min(97%, 100%); 
-            grid-auto-flow: row;
-			grid-gap:2rem;
-		}
-
-		/* The 3 main boxes inside the ".page-wrapper" box */ 
-		section, #zen-supporting, aside.sidebar {
-			/* border-style:solid; */ 
-		} 
-
-		section {
-			background-image: url("flower-g19ad71d5d_1280.jpg"); 
-			background-repeat: no-repeat;
-			background-size:cover;
-			color: white;
-    		padding: 1em 1em;
-			border-color: black;
-		}
-
-		section .sub-section {
-			background-color:black;
-			opacity:.6;
-		}
-
-		.container {
-            /*
-			display:flex;
-			align-items: flex-start;
-			flex-direction: row;
-            */
-		}
-
-		#zen-supporting {
-			position:relative;
-			padding:1em 1em;
-		}
-
-		.preamble h3, .preamble p {
-			padding-left:.5em;
-		}
-
-		#zen-summary {
-			padding: 1em;
-    		font-size: 1.5em;
-		}
-
-		#zen-preamble {
-			padding: 1em;
-		}
-
-		aside.sidebar {
-			padding:1em 1em;
-		}
-
-		img {
-			display:block;
-			max-width: 100%;
-		}
-
-		aside.sidebar ul {
-			list-style:none;
-		}
-
-		header h1, header h2 {
-			display: flex;
-    		flex-direction: row;
-    		justify-content: center;
-    		align-items: center;
-			padding-top:1em;
-		}
-
-        header h1 {
-			font-size: clamp(2rem, 1rem + 10vw, 5rem);
-			text-align:center;
-		}
-
-		.design-selection h3, .design-archives h3, .zen-resources h3, 
-		.explanation h3, .participation h3, .benefits h3, .requirements h3
-		{
-			margin-top: 1em;
-		}
-
-		footer {
-			/* border-style:solid; */
-			display:flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			background: beige;
-			position:absolute;
-			left:0px;
-			width:100vw;
-			padding:2em 1em;
-			margin-top:2em;
-		}
-
-		footer a {
-			padding-right:.5em;
-			font-size:1.5rem;
-			font-weight:bold;
-			text-decoration: none;
-			color:#056581;
-		}
-
-		footer a:hover {
-  			content: "";
-			border-left: .3em solid grey;
-		}
-	
-		@media (min-width:55em) {
-			.container {
-				grid-auto-flow:column;
-			}
-		}
-		
-
-	</style>
+	<link rel="stylesheet" href="style.css">
+	<script type="module">
+		import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+		const el = document.createElement('pwa-update');
+		document.body.appendChild(el);
+	 </script>
 </head>
 <body id="css-zen-garden">
 <div class="page-wrapper">
@@ -276,20 +152,5 @@
 </div><!--page wrapper -->
 <div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
 <div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
-<script>
-	// Don't register the service worker
-	// until the page has fully loaded
-	window.addEventListener('load', () => {
-	  // Is service worker available?
-	  if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('/sw.js').then(() => {
-		  console.log('Service worker registered!');
-		}).catch((error) => {
-		  console.warn('Error registering service worker:');
-		  console.warn(error);
-		});
-	  }
-	});
-  </script>
 </body>
 </html>
