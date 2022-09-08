@@ -147,14 +147,12 @@
 </div><!--page wrapper -->
 <div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
 <div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
-<script>
-	window.onload = () => {
-	'use strict';
-
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.register('sw.js');
-	}
-	}
+<script>	
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log("Service Worker Registered"))
+      .catch(e => console.log(e));
+  }
  </script>
 </body>
 </html>
