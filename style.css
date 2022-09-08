@@ -116,7 +116,7 @@ footer a {
 
 footer a:hover {
       content: "";
-    border-left: .3em solid grey;
+      color: maroon;
 }
 
 @media (min-width:55em) {
