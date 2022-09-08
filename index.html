@@ -10,11 +10,6 @@
 	<meta name="robots" content="all">
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" href="style.css">
-	<script type="module">
-		import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-		const el = document.createElement('pwa-update');
-		document.body.appendChild(el);
-	 </script>
 </head>
 <body id="css-zen-garden">
 <div class="page-wrapper">
@@ -152,5 +147,14 @@
 </div><!--page wrapper -->
 <div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
 <div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
+<script>
+	window.onload = () => {
+	'use strict';
+
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('sw.js');
+	}
+	}
+ </script>
 </body>
 </html>
