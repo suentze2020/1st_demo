@@ -5,9 +5,9 @@
   "display": "standalone",
   "name": "suentze2020.github",
   "orientation": "any",
-  "scope": "/",
+  "scope": "/1st_demo",
   "short_name": "suentze2020.github",
-  "start_url": "https://suentze2020.github.io/1st_demo",
+  "start_url": "https://suentze2020.github.io/1st_demo/",
   "theme_color": "#ffffff",
   "icons": [
     {
